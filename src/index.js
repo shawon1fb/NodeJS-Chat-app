@@ -1,4 +1,5 @@
 const path = require('path')
+const L = require('../tools/logger')
 const express = require('express')
 
 const app = express()
@@ -10,6 +11,5 @@ const publicDirectoryPath = path.join(__dirname, '../public')
 app.use(express.static(publicDirectoryPath))
 
 app.listen(port, () => {
-
-    console.log(`server is on port ${port}`)
+    L.data(`server is on port ${port}`)
 })

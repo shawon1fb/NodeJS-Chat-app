@@ -22,6 +22,7 @@ function data(v) {
 
 function log(v) {
     _log(chalk.hex('#ff4301 ').bold(v.toString()));
+  //  _log(chalk.hex('#3b6978 ').bold(v.toString()));
 }
 
 module.exports = {
