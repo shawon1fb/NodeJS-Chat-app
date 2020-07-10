@@ -19,14 +19,16 @@ io.on('connect', (socket) => {
 
     socket.emit('countUpdated', count)
     socket.broadcast.emit('message', 'new user joined')
-    socket.on('increment', () => {
+    socket.on('increment', (callback) => {
         count++
         io.emit('countUpdated', count)
+        callback("incremented")
     })
 
     socket.on('sendLocation', (coords) => {
         io.emit('message', `Location : ${coords.latitude} ${coords.longitude}`)
     })
+
 
     socket.on('disconnect', () => {
         io.emit('message', "A user has left")

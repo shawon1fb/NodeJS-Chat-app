@@ -12,7 +12,12 @@ socket.on('message', (message) => {
 document.querySelector('#increment').addEventListener(
     'click', () => {
         console.log("clicked")
-        socket.emit('increment')
+        socket.emit('increment', (message) => {
+
+            console.log(message)
+        })
+
+
     }
 )
 
